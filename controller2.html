@@ -1,0 +1,36 @@
+<html lang="en" ng-app="mylanguage">
+	<head>
+	<title>
+		Angular js
+	</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+	</head>
+
+
+	<body ng-app="mylanguage">
+
+	<script type="text/javascript">
+		var myapp = angular
+		                   .module('mylanguage',[])
+                           .controller('mycontroller',function($scope){
+		                   	var person = {name:"sayan",
+		                                  age:26,
+		                                  };
+		                         $scope.person = person;
+
+		                   });
+	</script>
+
+	<div ng-controller="mycontroller">
+		<div>name = {{person.name}}</div>
+
+		<div>age = {{person.age}}</div>
+
+	</div>
+	
+		
+	</body>
+</html>

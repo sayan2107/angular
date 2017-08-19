@@ -1,0 +1,10 @@
+<app-server></app-server>
+<button class="btn btn-primary" [disabled]="!allowServers" (click)="getServerStatus()">new server</button>
+<p>{{serverStatus}}</p>
+<p [innerText]="allowServers"></p>
+<p> {{allowServers}} </p>
+
+<input type="text" class="form-control" (input)="sendData($data)">
+<p> {{ serverName }} </p>
+
+<button (click)="onClick()">name</button>

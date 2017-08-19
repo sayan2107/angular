@@ -1,0 +1,12 @@
+<form action="" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <input type="text" name="firstname"  formControlName="firstname" placeholder="firstname"><br>
+  <input type="text" name="lastname"  formControlName="lastname" placeholder="lastname"><br>
+  <select value="language" name="language" formControlName="language"><br>
+    <option name="java" id="java">java</option>
+    <option name="cpp" id="cpp">cpp</option>
+    <option name="java" id="angular">angular</option>
+  </select><br>
+  <input type="submit" [disabled]="!form.valid" value="submit">
+</form>
+
+<app-test-comp></app-test-comp>

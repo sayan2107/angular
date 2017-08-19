@@ -1,0 +1,57 @@
+<html lang="en" ng-app="mylanguage">
+	<head>
+	<title>
+		Angular js
+	</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+   
+	</head>
+
+
+	<body ng-app="mylanguage">
+
+	<script type="text/javascript">
+		var myapp = angular
+		                   .module('mylanguage',[])
+                           .controller('mycontroller',function($scope){
+                           var country=[{name:"UK",
+                                         cities:[
+                                         	{name:"london"},
+                                         	{name:"manchester"},
+                                                ]
+                                         },
+                                        {name:"AUSTRALIA",
+                                         cities:[
+                                         	{name:"adelade"},
+                                         	{name:"sydney"},
+                                                ]
+                                         },
+                                         {name:"INDIA",
+                                         cities:[
+                                         	{name:"kolkata"},
+                                         	{name:"bangalore"},                                                                                                                                                                            
+                                                ]
+                                          }];
+                                       
+		                   $scope.country = country;
+		                   });
+	               </script>
+
+<div ng-controller="mycontroller">
+	<ul ng-repeat="countrycpy in country">
+		<li>
+			{{countrycpy.name}}
+			<ul ng-repeat="city in countrycpy.cities">
+				<li>
+					{{city.name}}
+				</li>
+			</ul>
+		</li>
+	</ul>
+	
+	</div>
+	
+		
+	</body>
+</html>

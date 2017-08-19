@@ -1,0 +1,33 @@
+<html lang="en" ng-app="mylanguage">
+	<head>
+	<title>
+		Angular js
+	</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+   
+	</head>
+
+
+	<body>
+
+	<script type="text/javascript">
+		var myapp = angular
+		                   .module('mylanguage',[])
+                           .controller('mycontroller',function($scope){
+                           	var myself = {name:"sayan",age:26,picture:"1.jpg"};
+                           	$scope.myself = myself;
+		                   
+		                   });
+	</script>
+
+	<div ng-controller="mycontroller">
+	<div>my name: {{myself.name}}</div>
+	<div>age : {{myself.age}}</div>
+	<img ng-src="{{myself.picture}}" height="200px" width="400px" alt="{{myself.name+ ' my picture'}}">
+		
+	</div>
+	
+		
+	</body>
+</html>

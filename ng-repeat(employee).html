@@ -1,0 +1,69 @@
+<html lang="en" ng-app="mylanguage">
+	<head>
+	<title>
+		Angular js
+	</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+   
+	</head>
+
+
+	<body ng-app="mylanguage">
+
+	<script type="text/javascript">
+		var myapp = angular
+		                   .module('mylanguage',[])
+                           .controller('mycontroller',function($scope){
+                           	var me = [{firstname:"ben",lastname:"stokes",gender:"male",salary:5000},
+                           	           {firstname:"ali",lastname:"azgar",gender:"male",salary:15000},
+                           	            {firstname:"suar",lastname:"khan",gender:"male",salary:52000},
+                           	            {firstname:"alia",lastname:"jones",gender:"female",salary:50200}];
+                           	$scope.me = me;
+                           
+		                   });
+	</script>
+
+	<div ng-controller="mycontroller">
+	<table>
+		<thead>
+			<tr>
+			<th>
+				Firstname
+			</th>
+			<th>
+			    Lastname
+			</th >
+			<th>
+				Gender
+			</th>
+			<th>
+				Salary
+			</th>
+		</tr>
+	</thead>
+		<tbody>
+			<tr ng-repeat="myself in me">
+				<td>
+					{{myself.firstname}}
+				</td>
+				<td>
+					{{myself.lastname}}
+				</td>
+				<td>
+					{{myself.gender}}
+				</td>
+				<td>
+					{{myself.salary}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	
+		
+	</div>
+	
+		
+	</body>
+</html>

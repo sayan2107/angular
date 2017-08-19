@@ -1,0 +1,84 @@
+<html lang="en" ng-app="mylanguage">
+	<head>
+	<title>
+		Angular js
+	</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+   
+	</head>
+
+
+	<body ng-app="mylanguage">
+
+	<script type="text/javascript">
+		var myapp = angular
+		                   .module('mylanguage',[])
+                           .controller('mycontroller',function($scope){
+                           	var me = {firstname:"sayan",lastname:"mazumder",age:21};
+                           	$scope.me = me;
+                           
+		                   });
+	</script>
+
+	<div ng-controller="mycontroller">
+	<table>
+		<tr>
+			<td>
+				First name: 
+			</td>
+			<td>
+				<input type="text" ng-model="me.firstname">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				last name: 
+			</td>
+			<td>
+				<input type="text" ng-model="me.lastname">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				age: 
+			</td>
+			<td>
+				<input type="text" ng-model="me.age">
+			</td>
+		</tr>
+	</table>
+
+	<table>
+		<tr>
+			<td>
+				First name: 
+			</td>
+			<td>
+				{{me.firstname}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				last name: 
+			</td>
+			<td>
+				{{me.lastname}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				age: 
+			</td>
+			<td>
+				{{me.age}}
+			</td>
+		</tr>
+	</table>
+	
+		
+	</div>
+	
+		
+	</body>
+</html>

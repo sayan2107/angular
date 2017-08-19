@@ -1,0 +1,115 @@
+<html lang="en" ng-app="mylanguage">
+	<head>
+	<title>
+		Angular js
+	</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+	<style type="text/css">
+		thead{
+	color: tomato;
+    border-collapse: collapse;
+    border: black;
+    font-family: arial;
+     font-style: italic;
+		}
+
+		tbody{
+			padding: 5px;
+    color: blueviolet;
+    font-style: italic;
+    font-size: x-large;
+		}
+
+		td
+{
+    padding:5px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+th{
+
+	border:1px solid black;
+	padding: 5px;
+}
+
+	</style>
+   
+	</head>
+
+
+	<body ng-app="mylanguage">
+
+	<script type="text/javascript">
+		var myapp = angular
+		                   .module('mylanguage',[])
+                           .controller('mycontroller',function($scope){
+                          var technologies=[
+                                               {name:'c++',likes:0,dislikes:0},
+                                               {name:'java',likes:0,dislikes:0},
+                                               {name:'html',likes:0,dislikes:0},
+                                               {name:'js',likes:0,dislikes:0},
+                                           ];
+                           $scope.technologies=technologies;
+                           
+                           $scope.incrementlikes = function(technology){
+                           	technology.likes++;
+
+                           }                
+
+                           $scope.incrementdislikes = function(technology){
+                           	technology.dislikes++;
+
+                           }                
+
+		                   });
+	</script>
+
+<div ng-controller="mycontroller">
+	<table>
+	<thead>
+		<tr>
+			<th>
+				Names
+			</th>
+			<th>
+				Likes
+			</th>
+			<th>
+				Dislikes
+			</th>
+			<th>
+				Like/Dislike
+			</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr ng-repeat="technology in technologies">
+			<td>
+				{{ technology.name }}
+			</td>
+			<td>
+				{{ technology.likes }}
+			</td>
+			<td>
+				{{ technology.dislikes }}
+			</td>
+
+			<td>
+				<input type="button" ng-click="incrementlikes(technology)" value="Like">
+				<input type="button" ng-click="incrementdislikes(technology)" value="dislike">
+			</td>
+		</tr>
+
+    </tbody>
+
+
+	</table>
+	
+	</div>
+	
+		
+	</body>
+</html>
